@@ -1,6 +1,6 @@
 # MyGallery FrontEnd
   
-##Project documentation
+## Project documentation
 This project uses [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
 ### Required items
