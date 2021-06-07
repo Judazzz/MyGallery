@@ -42,7 +42,7 @@
             <a (click)="toggleFullImage($event)" class="image-wrapper" data-title="{{ image.title }}" *ngFor="let image of visibleImages">
                 <img src="{{ image.thumbnailUrl }}" alt="{{ image.title }}" title="{{ image.title }}" class="thumbnail tr_tooltip" id="{{ image.id }}" data-title="{{ image.title }}">
                 <p>
-                    <span class="title">[{{ image.id }}] {{ image.title }}</span>
+                    <span class="title">[ID: {{ image.id }}] {{ image.title }}</span>
                 </p>
             </a>
         </div>
@@ -63,7 +63,7 @@
 <div class="overlay fixed image" [ngClass]="{ 'visible': selectedImageVisible }">
     <img src="{{ selectedImage?.url }}" alt="{{ selectedImage?.title }}" title="{{ selectedImage?.title }}" class="full-image">
     <p class="title">
-        {{ selectedImage?.title }}
+        [ID: {{ selectedImage?.id }}] {{ selectedImage?.title }}
     </p>
     <p>
         <a class="close" (click)="toggleFullImage($event)">

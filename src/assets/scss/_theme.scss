@@ -1,0 +1,112 @@
+/* ----- Design by Jonas Hansel ---------------- */
+/* ----- CSS Styles: Theme Baby Blue ----- */
+/*Dark: #4D7EB9*/
+/*Medium: #4D7EB8 TMP!?!*/
+/*Light: #E3F0F5*/
+
+h1 {
+    color: #001C50;
+}
+h2,
+h3,
+h4 {
+    color: #4D7EB9;
+}
+p {
+    color: #676767;
+}
+.hairline {
+    background-color: #E3F0F5;
+}
+table td,
+table th {
+    color: #676767;
+}
+ol li,
+ul li {
+    color: #676767;
+}
+a:link,
+a:active,
+a:visited,
+a:focus,
+a h3,
+a p .title,
+a.anchor,
+span.anchor {
+    color: #4D7EB8;
+}
+a:hover,
+a:hover h3,
+a:hover p .title,
+a.anchor:hover,
+span.anchor:hover {
+    color: #001C50;
+}
+
+html {
+    background-color: #FFFFFF;
+}
+body {
+    color: #676767;
+    background-color: #FFFFFF;
+}
+#main {
+    background-color: #FFFFFF;
+}
+#container {
+    background-color: #FFFFFF;
+}
+
+/*	Header Styles (breadcrumb/search)	*/
+.site-header {
+    background-color: #D3DFEE !important;
+}
+
+/*	Content Styles (left/center/right)	*/
+#content {
+}
+#content-inner {
+    background-color: #FFFFFF;
+}
+
+/*	Content Center Styles (Page Content)	*/
+#contentCenter {
+    border-bottom: solid 5px #4D7EB8 !important;
+}
+
+/*	Content: Album Styles	*/
+.activeSelect {
+    color: #676767;
+}
+.numphotos,
+.numpages {
+    color: #4D7EB9;
+}
+.viewSelect {
+    color: #4D7EB9;
+}
+
+/*	Page Footer */
+.page-footer {
+    color: #676767 !important;
+    background-color: #FFFFFF !important;
+}
+
+/*	Overlay Styles*/
+.overlay {
+    /* background: rgba(0, 0, 0, 0.75); */
+}
+
+/*	Footer Styles (Copyright/Quicklinks)	*/
+.footer {
+}
+jhw-site-footer .site-footer .copyright {
+    color: #676767;
+}
+jhw-site-footer .site-footer a {
+    color: #4D7EB8 !important;
+}
+jhw-site-footer .site-footer a:hover  {
+    color: #001C50 !important;
+}

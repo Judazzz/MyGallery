@@ -34,24 +34,6 @@ export function FadeAnimation(duration: number) {
         transition('visible => hidden', animate(duration + 'ms')),
         transition('hidden => visible', animate(duration + 'ms')),
     ]);
-    // trigger('visibilityChanged250', [
-    //     state('visible', style({opacity: 1})),
-    //     state('hidden', style({opacity: 0})),
-    //     transition('visible => hidden', animate('250ms')),
-    //     transition('hidden => visible', animate('250ms')),
-    // ]);
-    // trigger('visibilityChanged500', [
-    //     state('visible', style({opacity: 1})),
-    //     state('hidden', style({opacity: 0})),
-    //     transition('visible => hidden', animate('500ms')),
-    //     transition('hidden => visible', animate('500ms')),
-    // ]);
-    // trigger('visibilityChanged1000', [
-    //     state('visible', style({opacity: 1})),
-    //     state('hidden', style({opacity: 0})),
-    //     transition('visible => hidden', animate('1000ms')),
-    //     transition('hidden => visible', animate('1000ms')),
-    // ]);
 }
 
 export function ToggleAnimation() {

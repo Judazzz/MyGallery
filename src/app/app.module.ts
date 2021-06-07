@@ -7,8 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ngfModule } from 'angular-file';
-import { NgSelectModule } from '@ng-select/ng-select';
 //  Services:
 import { ApiService } from '@services/api.service';
 import { LoggingService } from '@services/logging.service';
@@ -26,8 +24,7 @@ import { GalleryModule } from '@module.gallery/gallery.module';
         HttpClientModule,
         AppRoutingModule,
         SharedModule,
-        GalleryModule,
-        NgSelectModule
+        GalleryModule
     ],
     declarations: [
         AppComponent

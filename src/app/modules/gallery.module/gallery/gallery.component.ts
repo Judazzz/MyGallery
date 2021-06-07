@@ -66,7 +66,6 @@ export class GalleryComponent implements OnInit, OnDestroy {
         this.orderActive = false;
         //  (Pre)set item size:
         this.selectedSize = LocalStorageService.getValue('album-size');
-        console.log('this.selectedSize: ' + this.selectedSize);
         if (!this.selectedSize) {
             this.selectedSize = 'medium';
             LocalStorageService.setValue('album-size', 'medium');

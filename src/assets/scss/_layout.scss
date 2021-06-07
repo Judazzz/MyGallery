@@ -10,7 +10,6 @@ body {
 
 html {
     background-color: #FFFFFF;
-    /*overflow: hidden;*/
 }
 
 body {
@@ -36,7 +35,7 @@ body {
     font-size: 76.5%;
 }
 
-/*anchor for jumping to certain content items*/
+/* anchor for jumping to certain content items*/
 .offview {
     margin: 1px;
     display: block;
@@ -49,13 +48,11 @@ body {
 #main {
     width: 100%;
     height: 100%;
-    // height: 100vh;
     margin: 0 auto;
     padding: 0;
     font-size: 1.2em;
     line-height: 1.35em;
     background-color: #FDFDFD;
-    // overflow: hidden;
 
     & > .mCSB_inside {
 
@@ -159,6 +156,7 @@ body {
         #contentCenter {
             width: 92.5%;
             padding: 40px 3.75% 75px 3.75%;
+            min-height: 75vh;
             line-height: 1.5em;
             background-color: transparent;
             border-bottom: solid 5px #000000;
@@ -624,6 +622,8 @@ body {
                     margin: 0 1.125% 15px 0;
 
                     p {
+                        padding: 5px 2.5% 0 2.5%;
+                        background-color: rgba(0, 0, 0, 0.5);
 
                         span {
 
@@ -1569,22 +1569,18 @@ body {
     width: 100%;
     height: 100px;
     margin: 0 auto;
-    padding: 0 0 75px 0;
+    padding: 0;
     font-size: 1.0em;
     font-weight: normal;
     border: none;
     background-color: transparent;
-    // overflow: hidden;
-    // position: fixed;
-    // left: 0;
-    // bottom: 0;
 }
 
 
 //  Page Footer:
 jhw-page-footer {
     width: 92.5vw;
-    height: 178px;
+    height: 100px;
     margin: 0 auto;
     padding: 0 3.75vw;
     background-color: #FFFFFF;
@@ -1594,7 +1590,7 @@ jhw-page-footer {
 
     .page-footer {
         width: 100%;
-        height: 178px;
+        height: 100px;
         margin: 0;
         padding: 0;
         color: #AAAAAA;
@@ -1604,9 +1600,9 @@ jhw-page-footer {
 
         .copyright {
             width: 25%;
-            height: 93px;
+            height: 20px;
             margin: 0;
-            padding: 85px 0 0 0;
+            padding: 40px 0 0 0;
             color: #AAAAAA;
             text-align: left;
             /* text-transform: lowercase; */
@@ -1616,9 +1612,9 @@ jhw-page-footer {
 
         .links {
             width: 50%;
-            height: 93px;
+            height: 20px;
             margin: 0;
-            padding: 85px 0 0 0;
+            padding: 40px 0 0 0;
             text-align: center;
             /* text-transform: lowercase; */
             background-color: transparent;
@@ -1627,9 +1623,9 @@ jhw-page-footer {
 
         .image {
             width: 25%;
-            height: 93px;
+            height: 20px;
             margin: 0;
-            padding: 85px 0 0 0;
+            padding: 40px 0 0 0;
             text-align: right;
             /* text-transform: lowercase; */
             background-color: transparent;
@@ -1655,203 +1651,6 @@ jhw-page-footer {
 }
 
 
-/*	SIDEBARS */
-jhw-sidebar-left,
-jhw-sidebar-right {
-    width: 0;
-    height: auto;
-    margin: 0;
-    padding: 0 0 50px 0;
-    border: none;
-    text-align: left;
-    background: rgba(0, 0, 0, 0.9) !important;
-    background: #0E070C !important;
-    opacity: 0;
-    @include transition-500(all);
-    display: block;
-    cursor: default;
-    overflow: hidden;
-    order: 1;
-    z-index: -1;
-
-    /*	SlideMenu Styles (Navigation) */
-    .sidebar {
-        width: 25vw;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-
-        .sidebar-rows {
-            margin: 0;
-            padding: 0;
-            opacity: 1;
-            @include transition-500(opacity);
-            overflow: hidden;
-
-            .sidebar-row {
-                width: 80%;
-                margin: 50px 5% 0 15%;
-                padding: 0;
-                line-height: 1.75em;
-                border: none;
-                background-color: transparent;
-                border-bottom: none;
-                clear: both;
-                overflow: hidden;
-
-                h2 {
-                    width: 100%;
-                    margin: 0 0 15px 0;
-                    font-size: 1.15em;
-                    color: #AAAAAA;
-                    font-weight: normal;
-                }
-
-                ul {
-                    width: 100%;
-                    margin: 0;
-                    padding: 0;
-                    clear: both;
-                    overflow: hidden;
-
-                    li {
-                        width: 100%;
-                        margin: 0 0 5px 0;
-                        padding: 0;
-                        line-height: 1.15em;
-                        background: none;
-                        list-style-type: none;
-
-                        .info {
-                            padding: 4px 0 0 5px;
-                            font-size: 0.875em;
-                            color: #FFFFFF;
-                        }
-
-                        a {
-                            color: #FFFFFF;
-                            font-size: 1.0em;
-                            line-height: 1.5em;
-                            text-decoration: none;
-                            /* text-transform: lowercase; */
-                            @include transition-500(all);
-
-                            &:hover {
-                                color: #AAAAAA;
-                                font-size: 1.0em;
-                                cursor: pointer;
-                                @include transition-500(all);
-                            }
-                        }
-
-                        &:after {
-                            content: '\f054';
-                            margin: 4px 10px 0 0;
-                            color: #FFFFFF;
-                            font-family: $font-awesome;
-                            font-size: 0.75em;
-                            display: inline-block;
-                            @include transition-500(all);
-                            float: left;
-                        }
-
-                        &.active {
-
-                            a {
-
-                                &:hover {
-                                    color: #AAAAAA;
-                                    font-size: 1.0em;
-                                    cursor: pointer;
-                                    @include transition-500(all);
-                                }
-                            }
-
-                            &:after {
-                                margin: 2px 10px 0 0;
-                                font-size: 0.75em;
-                                transform: none;
-                                transform: rotate(180deg);
-                            }
-                        }
-
-                        &.bottommargined {
-                            margin: 0 0 15px 0;
-                        }
-
-                        &.topmargined {
-                            margin: 15px 0 5px 0;
-                        }
-
-                        &:hover {
-
-                            &:after {
-                                margin: 2px 10px 0 0;
-                                content: '\f054';
-                                font-size: 0.9em;
-                                @include transition-500(all);
-                                transform: rotate(180deg);
-                            }
-
-                            &.active {
-
-                                &:after {
-                                    margin: 2px 10px 0 0;
-                                    font-size: 0.75em;
-                                    transform: none;
-                                    transform: rotate(180deg);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .spacer {
-            width: 100%;
-            height: 2px;
-            margin: 0;
-            padding: 0;
-            background-color: transparent;
-            clear: both;
-        }
-    }
-
-    &.visible {
-        width: 25vw;
-        opacity: 1;
-
-        .sidebar {
-
-            .sidebar-rows {
-                opacity: 1;
-                pointer-events: auto;
-            }
-        }
-    }
-
-    &:not(.visible) {
-
-        .sidebar {
-
-            .sidebar-rows {
-                opacity: 0;
-                pointer-events: none;
-            }
-        }
-    }
-}
-
-jhw-sidebar-left {
-
-}
-
-jhw-sidebar-right {
-    order: 3;
-}
-
-
 /*	OVERLAY STYLES */
 .overlay {
     width: 100vw;
@@ -1864,15 +1663,6 @@ jhw-sidebar-right {
     z-index: 15000;
     top: 50%;
     left: 50%;
-
-    .overlayContainer {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        display: block;
-        overflow: hidden;
-    }
 
     &.fixed {
         position: fixed;
@@ -1933,40 +1723,6 @@ jhw-sidebar-right {
     }
 }
 
-/* Navigation Link Styles */
-.nav,
-a {
-    font-size: 0.95em;
-    line-height: 1.5em;
-    text-decoration: underline;
-    font-variant: normal;
-    font-weight: normal;
-    /* text-transform: lowercase; */
-    color: #333333;
-
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-span.fontlabel {
-    font-size: 0.95em;
-    line-height: 1.5em;
-    font-variant: normal;
-    font-weight: normal;
-    color: #AAAAAA;
-}
-
-.quicklinks {
-
-    li {
-        background-color: #3D3D3D;
-
-        &:hover {
-            background-color: #121212;
-        }
-    }
-}
 
 /* Tooltip Styles */
 .tr_tooltip {}
@@ -1995,442 +1751,5 @@ span.fontlabel {
         background-color: rgba(0, 0, 0, 0.5);
         border: none;
         display: inline-block;
-    }
-}
-
-/* ScrollBar Styles */
-/* Body scroll */
-.htmlScroll {
-
-    div {
-        background-color: #DADADA !important;
-        opacity: 0.5 !important;
-        border: none !important;
-    }
-}
-
-/* Page/Overlay Comments scroll */
-.commentsScroll,
-.overlayCommentsScroll {
-    position: fixed !important;
-    z-index: 0 !important;
-
-    div {
-        background-color: #FFFFFF !important;
-        opacity: 0.25 !important;
-        border: none !important;
-        left: 10px;
-    }
-}
-
-/* Overlay scroll */
-.overlayScroll {
-
-    div {
-        background-color: #999999 !important;
-        opacity: 0.5 !important;
-        border: none !important;
-    }
-}
-
-/* SlideMenu */
-.sidebar {
-
-    .nicescroll-rails {
-        position: fixed !important;
-
-        div {
-            background-color: #DADADA !important;
-            opacity: 0.5 !important;
-            border: none !important;
-        }
-    }
-}
-
-/* Horizontal (always disable) */
-#nicescroll-hr {
-    display: none !important;
-}
-
-/* Tag Styles */
-.tag,
-.tag-fa,
-.tag.tag-fa,
-.tagit-label,
-.text-icon {
-    height: 24px;
-    margin: 0;
-    padding: 0 8px;
-    color: #FFFFFF;
-    line-height: 24px;
-    background-color: #000000;
-    @include transition-500(all);
-    display: inline-block;
-}
-
-.tag:hover,
-.tagit-label,
-.text-icon {
-
-    &:hover {
-        color: #000000;
-        background-color: transparent;
-        transition: all 0.5s ease-in-out;
-    }
-}
-
-.tagit-label,
-.tagit-close .text-icon{
-    height: 24px;
-    padding: 0 8px;
-    line-height: 23px;
-}
-
-.fa {
-    span {
-        font-size: 0;
-    }
-}
-
-.text-icon {
-    margin: 0;
-    padding: 0 4px;
-}
-
-.tag {
-
-    &.small {
-        margin: 0;
-        padding: 3px;
-        font-size: 0.8em;
-    }
-
-    .tag-fa {
-        min-width: 20px;
-        height: 32px;
-        margin: -3px 5px 0 0;
-        padding: 0 0.775%;
-        padding: 0 6px;
-        color: #FFFFFF;
-        font-size: 1.0em;
-        line-height: 32px;
-        text-align: center;
-        text-transform: uppercase;
-        background-color: #000000;
-        float: left;
-        cursor: pointer;
-
-        &:focus,
-        &:hover {
-            color: #000000;
-            background-color: #FFFFFF;
-        }
-
-        &.right {
-            float: right;
-        }
-
-        &.tag-fa-text {
-            width: auto !important;
-            height: 18px !important;
-            margin: 6px 4px 0 0 !important;
-            padding-left: 4px !important;
-            padding-right: 4px !important;
-            font-size: 1.0em !important;
-            line-height: 0.7em;
-            /* text-transform: lowercase; */
-        }
-
-        &.tag-fa-text-image {
-            height: 17px !important;
-            margin: 5px 4px 0 0 !important;
-        }
-
-        &.tag-fa-warning {
-            color: #FFFFFF !important;
-            background-color: #FF0000 !important;
-
-            &:hover {
-                color: #EEEEEE !important;
-                background-color: #BB0000 !important;
-            }
-        }
-
-        &.margined {
-            margin-right: 15px;
-        }
-
-        &.refreshRandomImages {
-            height: 31px;
-            margin: 0;
-            padding: 1px 6px 0 6px;
-            line-height: inherit !important;
-        }
-
-        &.button {
-            width: 100%;
-            height: 26px;
-            margin: -10px auto 0 auto;
-            padding: 14px 0 0 0;
-            color: #666666;
-            font-size: 1.0em;
-            line-height: 16px;
-            /* text-transform: lowercase; */
-            background-color: transparent;
-
-            &:hover {
-                color: #000000;
-                background-color: #FFFFFF;
-            }
-        }
-
-        &.tag-fa-overlay {
-            min-width: 23px;
-            height: 25px;
-            margin: 5px 0 0 5px;
-            padding: 5px 6px;
-            color: #999999 !important;
-            font-size: 1.35em;
-            line-height: 1.6em;
-            float: left;
-
-            &:hover {
-                color: #EEEEEE !important;
-                background-color: transparent !important;
-            }
-
-            &.tag-fa-reversed {
-
-                &:hover {
-                    color: #CCCCCC;
-                    background-color: transparent;
-                }
-            }
-        }
-
-        &.right {
-            margin: 5px 5px 0 0;
-            float: right;
-        }
-
-        &.tag-fa-startbutton {
-            width: 100%;
-            height: 50px;
-            margin: -14px 0 0 0;
-            padding: 0;
-            line-height: 50px;
-            /* text-transform: lowercase; */
-        }
-
-        /* Reversed Tag Styles */
-        &.tag-fa-reversed {
-            color: #666666;
-            background-color: transparent;
-
-            &:hover {
-                color: #000000;
-                background-color: transparent !important;
-            }
-        }
-    }
-}
-
-.overlaytag {
-    margin: 0;
-    padding: 0 8px;
-    color: #000000 !important;
-    background-color: #CCCCCC;
-    display: inline-block;
-
-    .small {
-        margin: 0;
-        padding: 3px;
-        font-size: 0.8em;
-    }
-
-    &:hover {
-        color: #AAAAAA !important;
-        background-color: transparent;
-        transition: all 0.75s ease-out;
-    }
-}
-
-/*	CSS Loading */
-.loading {
-    margin: 0 auto;
-    padding: 0 0 0 100px;
-    position: absolute;
-
-    .bullet {
-        padding: 6px;
-        background: #333333;
-        border-radius: 50%;
-        -webkit-animation: animIn 2s ease-in-out 0s infinite;
-        animation: animIn 2s ease-in-out 0s infinite;
-        position: absolute;
-        opacity: 0;
-
-        &:nth-child(1) {
-            -webkit-animation-delay: 0s;
-            animation-delay: 0s;
-        }
-        &:nth-child(2) {
-            -webkit-animation-delay: 0.15s;
-            animation-delay: 0.15s;
-        }
-        &:nth-child(3) {
-            -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s;
-        }
-        &:nth-child(4) {
-            -webkit-animation-delay: 0.45s;
-            animation-delay: 0.45s;
-        }
-    }
-
-    &.overlayImageLoading {
-        margin: 0;
-        padding: 0;
-        opacity: 0;
-        @include transition-250(opacity);
-        position: absolute;
-        top: 25vh;
-        left: 50%;
-        right: 50%;
-        z-index: -1;
-
-        .bullet {
-            background: #999999;
-        }
-    }
-}
-
-
-/*	Feature Tour */
-.guideMask {
-    width: 100%;
-    background-color: #000000;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.guideBubble {
-    width: 250px;
-    padding: 10px;
-    background-color: #FFFFFF;
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-    position: absolute;
-
-    .intro {
-        margin-left: 30px;
-        padding-bottom: 30px;
-        color: #333333;
-        font-family: $font-body;
-        font-size: 1.1em;
-        line-height: 1.5em;
-    }
-
-    .step {
-        width: 20px;
-        height: 20px;
-        color: #FFFFFF;
-        line-height: 20px;
-        text-align: center;
-        font-size: 0.9em;
-        font-weight: normal;
-        background-color: #666666;
-        border-radius: 10px;
-        position: absolute;
-        top: 8px;
-        left: 5px;
-    }
-
-    .formitem {
-
-        .formitem_md {
-            margin-bottom: 0;
-
-            .button {
-
-                &:before {
-                    height: 30px;
-                    margin: 0 10px 0 0;
-                    font-size: 0.75em;
-                    line-height: 32px;
-                }
-
-                &.icon-right {
-
-                    &:before {
-                        margin: 0 0 0 10px;
-                    }
-                }
-
-                &.raised {
-                    margin: 0 10px;
-                    padding: 0 15px;
-                    font-size: 1.1em;
-                    /* text-transform: lowercase; */
-                    box-shadow: none;
-                    border-radius: 0;
-                    float: left;
-                }
-
-                &:last-of-type {
-                    float: right;
-                }
-
-                &.disabled {
-                    opacity: 0.25;
-                    pointer-events: none;
-                }
-            }
-
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    .guideBubble-arrow {
-        content: '';
-        border: 5px solid #FFFFFF;
-        position: absolute;
-
-        &.top {
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: #FFFFFF;
-            border-left-color: transparent;
-            top: -10px;
-        }
-
-        &.right {
-            border-top-color: transparent;
-            border-right-color: transparent;
-            border-bottom-color: transparent;
-            border-left-color: #FFFFFF;
-            top: 10px;
-            right: -10px;
-        }
-
-        &.bottom {
-            border-top-color: #FFFFFF;
-            border-right-color: transparent;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            bottom: -10px;
-        }
-
-        &.left {
-            border-top-color: transparent;
-            border-right-color: #FFFFFF;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-            top: 10px;
-            left: -10px;
-        }
     }
 }
