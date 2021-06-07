@@ -1,0 +1,73 @@
+<article id="pageContent" class="pagecontent-container">
+    <!-- HEADER -->
+    <section class="cWide">
+        <h1 class="albumHeader">Album with ID {{ galleryId }}</h1>
+        <span class="numitems" *ngIf="visibleImages">{{ visibleImages.length }} photo's</span>
+    </section>
+    <!-- TOOLS -->
+    <section class="cWide" *ngIf="visibleImages && visibleImages.length > 0">
+        <div class="tools left">
+            <span class="anchor" (click)="toggleDropdown('order')">
+                Sort by <span class="selected">{{ selectedOrder }}</span>
+            </span>
+            <div class="pulldown" [ngClass]="{ 'active' : orderActive }">
+                <ul>
+                    <li><span class="anchor" (click)="changeOrder('random', true)">Random</span></li>
+                    <li><span class="anchor" (click)="changeOrder('id', true)">ID</span></li>
+                    <li><span class="anchor" (click)="changeOrder('title', true)">Title</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="tools center">
+            <span class="anchor" (click)="toggleDropdown('size')">
+                Thumbnail size <span class="selected">{{ selectedSize }}</span>
+            </span>
+            <div class="pulldown" [ngClass]="{ 'active' : sizeActive }">
+                <ul>
+                    <li><span class="anchor" (click)="changeSize('small')">Small</span></li>
+                    <li><span class="anchor" (click)="changeSize('medium')">Medium</span></li>
+                    <li><span class="anchor" (click)="changeSize('large')">Large</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="tools right">
+            <a href="/#/galleries">Back to album overview</a>
+        </div>
+        <hr class="breaker">
+    </section>
+
+    <!-- RESULTS -->
+    <section class="album {{ selectedSize }}-size cWide" [ngClass]="{ 'hidden' : listItemsHidden }" *ngIf="visibleImages && visibleImages.length > 0">
+        <div>
+            <a (click)="toggleFullImage($event)" class="image-wrapper" data-title="{{ image.title }}" *ngFor="let image of visibleImages">
+                <img src="{{ image.thumbnailUrl }}" alt="{{ image.title }}" title="{{ image.title }}" class="thumbnail tr_tooltip" id="{{ image.id }}" data-title="{{ image.title }}">
+                <p>
+                    <span class="title">[{{ image.id }}] {{ image.title }}</span>
+                </p>
+            </a>
+        </div>
+    </section>
+    <!-- NO RESULTS -->
+    <div style="padding-bottom: 50px;" *ngIf="visibleImages && visibleImages.length === 0">
+        No images found for this album.
+    </div>
+    <!-- BACK-LINK -->
+    <ul style="margin-top: 25px;">
+        <li>
+            <i class="fa fa-chevron-right" style="margin-right: 10px;"></i> <a href="/#/galleries">Back to album overview</a>
+        </li>
+    </ul>
+</article>
+
+<!-- FULL-SIZE IMAGE OVERLAY -->
+<div class="overlay fixed image" [ngClass]="{ 'visible': selectedImageVisible }">
+    <img src="{{ selectedImage?.url }}" alt="{{ selectedImage?.title }}" title="{{ selectedImage?.title }}" class="full-image">
+    <p class="title">
+        {{ selectedImage?.title }}
+    </p>
+    <p>
+        <a class="close" (click)="toggleFullImage($event)">
+            [ close image ]
+        </a>
+    </p>
+</div>

@@ -1,0 +1,29 @@
+/* TEXT FONT(S) */
+
+/* Custom fonts */
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('../Fonts/RobotoRegular.eot');
+    src: url('../Fonts/RobotoRegular.eot?#iefix') format('embedded-opentype'),
+        /*url('../Fonts/RobotoRegular.woff2') format('woff2'),*/
+    url('../Fonts/RobotoRegular.woff') format('woff'),
+    url('../Fonts/RobotoRegular.ttf') format('truetype'),
+    url('../Fonts/RobotoRegular.svg#RobotoRegular') format('svg');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../Fonts/RobotoBold.eot');
+    src: url('../Fonts/RobotoBold.eot?#iefix') format('embedded-opentype'),
+        /*url('../Fonts/RobotoBold.woff2') format('woff2'),*/
+    url('../Fonts/RobotoBold.woff') format('woff'),
+    url('../Fonts/RobotoBold.ttf') format('truetype'),
+    url('../Fonts/RobotoBold.svg#RobotoBold') format('svg');
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* ICON FONT: FONTAWESOME */
+@import url('./fontawesome.min.css');

@@ -1,0 +1,2151 @@
+/* ----- Design by Jonas Hansel ---------------- */
+/* ----- CSS Styles: Layout Styling ----- */
+
+html {
+    background-color: #FFFFFF;
+    /*overflow: hidden;*/
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #FFFFFF;
+    position: relative;
+}
+body.noscroll {
+    overflow: hidden;
+}
+/*anchor for jumping to certain content items*/
+.offview {
+    margin: 1px;
+    display: block;
+    position: absolute;
+    top: -1000px !important;
+    left: -5000px !important;
+    width: 1px;
+}
+#main {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 1.35em;
+    background-color: #FDFDFD;
+}
+#container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #FFFFFF;
+    border: none;
+    box-shadow: none;
+    clear: both;
+    overflow: hidden;
+}
+
+/*	PAGE HEADER */
+.site-header {
+    width: 100%;
+    height: 25vh;
+    margin: 0 auto;
+    background-color: #DADADA;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.site-header.tall {
+}
+.site-header.shrinked {
+    height: 50px;
+    min-height: 50px;
+    position: fixed;
+    z-index: 50;
+}
+.site-header.animated {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.site-header .site-header-loader {
+    padding-top: 5vh;
+    font-size: 1.0em;
+    line-height: 1.35em;
+    opacity: 0;
+}
+.site-header.shrinked .header-loader {
+    display: none !important;
+}
+.site-header .site-header-loader p {
+    color: #333333;
+}
+
+.site-header .site-header-logo {
+    padding: 15px 40px 15px 30px;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    z-index: 100;
+}
+.site-header .site-header-logo.animate {
+    -webkit-animation: fadein 0s 1.5s both steps(2, start);
+    -moz-animation: fadein 0s 1.5s both steps(2, start);
+    -o-animation: fadein 0s 1.5s both steps(2, start);
+    animation: fadein 0s 1.5s both steps(2, start);
+}
+.site-header .site-header-logo a {
+    color: #EEEEEE;
+    font-family: 'NeonFont';
+    font-size: 2.75em;
+    line-height: 1.25em;
+    text-align: center;
+    text-shadow: 0 0 5px #EEEEEE, 0 0 10px #EEEEEE, 0 0 20px #CCCCCC, 0 0 30px #CCCCCC, 0 0 40px #CCCCCC, 0 0 50px #CCCCCC, 0 0 60px #CCCCCC, 0 0 75px #CCCCCC;
+    -webkit-transition: font 0.5s ease-in-out;
+    -moz-transition: font 0.5s ease-in-out;
+    -o-transition: font 0.5s ease-in-out;
+    transition: font 0.5s ease-in-out;
+    display: inline-block;
+}
+.site-header .site-header-logo.animate a {
+    opacity: 0.925;
+    -webkit-animation: neon 2.0s 2.5s both steps(2, start);
+    -moz-animation: neon 2.0s 2.5s both steps(2, start);
+    -o-animation: neon 2.0s 2.5s both steps(2, start);
+    animation: neon 2.0s 2.5s both steps(2, start);
+}
+.site-header .site-header-logo a:hover {
+}
+
+/*.site-header img {*/
+    /*width: 100vw;*/
+    /*margin-top: -40vh;*/
+    /*-webkit-transition: margin 0.1s ease-in-out;*/
+    /*-moz-transition: margin 0.1s ease-in-out;*/
+    /*-ms-transition: margin 0.1s ease-in-out;*/
+    /*-o-transition: margin 0.1s ease-in-out;*/
+    /*transition: margin 0.1s ease-in-out;*/
+    /*display: none;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+/*}*/
+.site-header.shrinked img {
+    display: none !important;
+}
+
+/*	Header Styles (breadcrumb/search) */
+.header-toolbar {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    clear: both;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.site-header.shrinked .header-toolbar {
+    background: #000000;
+    background-color: rgba(0, 0, 0, 0.675);
+}
+
+.site-header #shortcuts, /* obsolete */
+.site-header .site-header-toolbar-breadcrumb,
+.site-header .site-header-toolbar-shortcuts,
+.site-header .site-header-toolbar-search {
+    width: 50%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    font-variant: normal;
+    /* text-transform: lowercase; */
+    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.675);
+    float: left;
+}
+.site-header.shrinked #shortcuts /* obsolete */,
+.site-header.shrinked .header-toolbar-breadcrumb,
+.site-header.shrinked .header-toolbar-shortcuts,
+.site-header.shrinked .header-toolbar-search {
+    margin: 0;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.675);
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    -ms-transition: background 0.5s ease-in-out;
+    -o-transition: background 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+/*	Breadcrumb/Navigation */
+/*.site-header .navigation-trigger {*/
+    /*width: 7.5%;*/
+    /*height: 50px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*font-size: 1.2em;*/
+    /*line-height: 50px;*/
+    /*text-align: center;*/
+    /*background-color: transparent;*/
+    /*display: block;*/
+    /*float: left;*/
+/*}*/
+/*.site-header.navigation-trigger:after {*/
+    /*content: '\f0c9';*/
+    /*margin: 0;*/
+    /*font-family: 'FontAwesome';*/
+    /*font-size: 1.0em;*/
+    /*display: inline-block;*/
+    /*-webkit-transition: all 0.5s ease-in-out;*/
+    /*-moz-transition: all 0.5s ease-in-out;*/
+    /*-o-transition: all 0.5s ease-in-out;*/
+    /*transition: all 0.5s ease-in-out;*/
+/*}*/
+/*.site-header .navigation-trigger.active:after {*/
+    /*content: '\f053';*/
+    /*transform: rotate(180deg);*/
+/*}*/
+/*.site-header.shrinked .navigation-trigger {*/
+    /*background-color: transparent !important;*/
+/*}*/
+/*.site-header .site-header-toolbar-breadcrumb .breadcrumb-wrapper {*/
+    /*width: 92.5%;*/
+    /*height: 50px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*line-height: 50px;*/
+    /*display: inline-block;*/
+    /*float: left;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.site-header .site-header-toolbar-breadcrumb a.breadcrumb-link:link,*/
+/*.site-header .site-header-toolbar-breadcrumb a.breadcrumb-link:active,*/
+/*.site-header .site-header-toolbar-breadcrumb a.breadcrumb-link:visited,*/
+/*.site-header .site-header-toolbar-breadcrumb a.breadcrumb-link:focus {*/
+    /*height: 50px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*font-size: 1.0em;*/
+    /*color: #BFBFBF;*/
+    /*text-decoration: none;*/
+    /*line-height: 50px;*/
+    /*display: block;*/
+    /*float: left;*/
+/*}*/
+/*.site-header .site-header-toolbar-breadcrumb a.breadcrumb-link:hover {*/
+    /*color: #FFFFFF;*/
+    /*text-decoration: none;*/
+/*}*/
+/*.site-header .site-header-toolbar-breadcrumb a.breadcrumb-link::after {*/
+    /*padding: 0 10px;*/
+    /*content: '//';*/
+    /*color: #BFBFBF;*/
+    /*font-size: 0.9em;*/
+    /*line-height: 50px;*/
+    /*display: inline-block;*/
+    /*float: right;*/
+    /*-webkit-transition: all 0.5s ease-in-out;*/
+    /*-moz-transition: all 0.5s ease-in-out;*/
+    /*-ms-transition: all 0.5s ease-in-out;*/
+    /*-o-transition: all 0.5s ease-in-out;*/
+    /*transition: all 0.5s ease-in-out;*/
+/*}*/
+/*.site-header .site-header-toolbar-breadcrumb .active {*/
+    /*height: 50px;*/
+    /*font-size: 1.0em;*/
+    /*color: #FFFFFF;*/
+    /*line-height: 50px;*/
+    /*display: block;*/
+    /*float: left;*/
+/*}*/
+/*.site-header.shrinked .header-toolbar-breadcrumb a.breadcrumb-link:link,*/
+/*.site-header.shrinked .header-toolbar-breadcrumb a.breadcrumb-link:active,*/
+/*.site-header.shrinked .header-toolbar-breadcrumb a.breadcrumb-link:visited,*/
+/*.site-header.shrinked .header-toolbar-breadcrumb a.breadcrumb-link:focus {*/
+    /*color: #BFBFBF;*/
+/*}*/
+/*.site-header.shrinked .header-toolbar-breadcrumb a.breadcrumb-link:hover {*/
+    /*color: #FFFFFF;*/
+/*}*/
+/*.site-header.shrinked .header-toolbar-breadcrumb a.breadcrumb-link::after {*/
+    /*color: #BFBFBF;*/
+/*}*/
+/*.site-header.shrinked .header-toolbar-breadcrumb .active {*/
+    /*color: #FFFFFF;*/
+/*}*/
+/*	Search/Settings */
+/*.site-header .preferences-trigger {*/
+    /*width: 7.5%;*/
+    /*height: 50px;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*font-size: 1.2em;*/
+    /*line-height: 50px;*/
+    /*text-align: center;*/
+    /*display: inline-block;*/
+    /*-webkit-transition: all 0.5s ease-in-out;*/
+    /*-moz-transition: all 0.5s ease-in-out;*/
+    /*-o-transition: all 0.5s ease-in-out;*/
+    /*transition: all 0.5s ease-in-out;*/
+/*}*/
+/*.site-header .preferences-trigger::after {*/
+    /*content: '\f013';*/
+    /*margin: 0;*/
+    /*font-family: 'FontAwesome';*/
+    /*font-size: 1.0em;*/
+    /*display: inline-block;*/
+    /*-webkit-transition: all 0.5s ease-in-out;*/
+    /*-moz-transition: all 0.5s ease-in-out;*/
+    /*-ms-transition: all 0.5s ease-in-out;*/
+    /*-o-transition: all 0.5s ease-in-out;*/
+    /*transition: all 0.5s ease-in-out;*/
+/*}*/
+/*.site-header .preferences-trigger.active::after {*/
+    /*content: '\f054';*/
+    /*transform: rotate(-180deg);*/
+/*}*/
+.site-header #languageSelectTrigger {
+    width: 35px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    text-align: right;
+}
+.site-header .tag.tag-fa.tag-fa-reversed,
+.site-header .tag-fa.tag-fa-reversed {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    color: #BFBFBF;
+    line-height: 50px;
+    text-align: center;
+}
+.site-header .tag.tag-fa.tag-fa-reversed:focus,
+.site-header .tag-fa.tag-fa-reversed:focus,
+.site-header .tag.tag-fa.tag-fa-reversed:hover,
+.site-header .tag-fa.tag-fa-reversed:hover {
+    color: #FFFFFF;
+    background-color: transparent;
+}
+.site-header #searchForm {
+    width: 50%;
+    height: 50px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+.site-header .search-wrapper {
+    width: 75%;
+    max-width: 300px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+.site-header .search-query {
+    width: calc(100% - 30px);
+    height: 30px;
+    margin: 10px 0 9px 0;
+    padding: 0 30px 0 0;
+    color: #BFBFBF;
+    line-height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px #BFBFBF;
+    outline: none;
+}
+/*.site-header .search-form .formitem_md label {*/
+    /*width: calc(100% - 30px);*/
+    /*color: #BFBFBF;*/
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+/*}*/
+.site-header .search-query:hover,
+.site-header .search-query:focus {
+    color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px #FFFFFF;
+}
+.site-header .search-query ~ .bar {
+    width: 100%;
+    position: relative;
+    display: block;
+    bottom: 11px;
+}
+.site-header .search-query ~ .bar:before,
+.site-header .search-query ~ .bar:after {
+    width: 0;
+    height: 2px;
+    background: #FFFFFF;
+    transition: all 0.25s ease-in-out;
+    display: block;
+    position: absolute;
+    content: '';
+}
+.site-header .search-query ~ .bar:before {
+    left: 50%;
+}
+.site-header .search-query ~ .bar:after {
+    right: 50%;
+}
+.site-header .search-query:focus ~ .bar:before,
+.site-header .search-query:focus ~ .bar:after
+{
+    width: 50%;
+}
+.site-header .search-form .search-submit {
+    width: 30px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.site-header .site-header-toolbar-search .tour-trigger {
+    margin-left: 5px;
+}
+.site-header .site-header-toolbar-search .tour-trigger .fa {
+    font-size: 1.35em;
+    line-height: 50px;
+}
+.site-header.shrinked .search-form .formitem_md label {
+    color: #BFBFBF;
+}
+.site-header.shrinked .tag.tag-fa.tag-fa-reversed,
+.site-header.shrinked .tag-fa.tag-fa-reversed {
+    color: #BFBFBF;
+}
+.site-header.shrinked .tag.tag-fa.tag-fa-reversed:hover,
+.site-header.shrinked .tag-fa.tag-fa-reversed:hover {
+    color: #FFFFFF;
+}
+.site-header.shrinked .search-query {
+    color: #BFBFBF;
+    border-bottom: solid 1px #BFBFBF;
+}
+.site-header.shrinked .search-query:hover,
+.site-header.shrinked .search-query:focus {
+    color: #FFFFFF;
+    border-bottom: solid 1px #FFFFFF;
+}
+.site-header.shrinked .search-query ~ .bar {
+    bottom: 11px;
+}
+.site-header.shrinked .search-query ~ .bar:before,
+.site-header.shrinked .search-query ~ .bar:after {
+    background: #FFFFFF;
+}
+.site-header #iconContainer {
+    width: 92.5%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+.site-header #iconContainer .tag {
+    width: 40px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    float: right;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.site-header #iconContainer .tag.margined {
+    margin: 0 0 0 15px;
+}
+.site-header a,
+.site-header span,
+.site-header label,
+.site-header input,
+.site-header button {
+    -webkit-transition: color 0.5s ease-in-out;
+    -moz-transition: color 0.5s ease-in-out;
+    -o-transition: color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+
+/*	Content Center Styles (Page Content) */
+#content-inner {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    -webkit-transition: background 0.5s ease-in-out;
+    -moz-transition: background 0.5s ease-in-out;
+    -ms-transition: background 0.5s ease-in-out;
+    -o-transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+    order: 2;
+    -webkit-flex: 1;
+    flex: 1;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+#contentCenter {
+    width: 100%;
+    min-height: 75vh;
+    padding: 40px 0 75px 0;
+    line-height: 1.5em;
+    background-color: transparent;
+    border-bottom: solid 5px #000000;
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    -ms-transition: opacity 0.25s ease-in-out;
+    -o-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+    float: right;
+    overflow: hidden;
+}
+#contentCenter.locked {
+    opacity: 0.5 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+#contentBottom {
+    width: 100%;
+    height: 0;
+    background-color: transparent;
+    clear: both;
+}
+
+/*	Overlay Styles */
+.overlayContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+/*	Preferences Overlay */
+.overlayContainer .overlayPreferences {
+    width: 20vw;
+    min-width: 275px;
+    height: 0;
+    margin: 10vh auto 0 auto;
+    padding: 0 2.5vw;
+    text-align: left;
+    background-color: #FFFFFF;
+    transition: height 0.25s ease-out;
+    overflow: hidden;
+    display: block;
+}
+.overlayContainer .overlayPreferences h1 {
+    width: 100%;
+    margin: 25px 0;
+    padding: 2vh 0 0 0;
+    display: block;
+}
+.overlayContainer .overlayPreferences h1 ul {
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 10px;
+}
+.overlayContainer .overlayPreferences h1 ul li {
+    width: 18px;
+    height: 18px;
+    margin: 0 5px 0 0;
+    padding: 0;
+    color: #000000;
+    font-size: 0.6em;
+    font-weight: bold;
+    line-height: 17px;
+    text-align: center;
+    border: solid 2px #999999;
+    border-radius: 50%;
+    opacity: 0.325;
+    display: inline-block;
+    float: left;
+}
+.overlayContainer .overlayPreferences h1 ul li.active {
+    opacity: 1;
+}
+.overlayContainer .overlayPreferences .inner {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 2vh 0;
+    transition: all 0.25s ease-out;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+}
+.overlayContainer .overlayPreferences .inner .column {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: all 0.25s ease-out;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.overlayContainer .overlayPreferences .inner .column .localized {
+    display: none;
+}
+.overlayContainer .overlayPreferences .inner .column.hiddenTop {
+    height: 0;
+    top: -100vh;
+}
+.overlayContainer .overlayPreferences .inner .column.visible {
+    height: auto;
+    top: 0;
+}
+.overlayContainer .overlayPreferences .inner .column.hiddenBottom {
+    height: 0;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem {
+    height: 40px;
+    margin: 0;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem.topmargined {
+    height: auto;
+    margin: 100px 0 0 0 !important;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem p {
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem p .fa {
+    margin: 0 5px 0 0;
+    font-size: 1.3em;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem .ink {
+    /*transition: all 0.25s ease-out;*/
+}
+.overlayContainer .overlayPreferences .inner .column .formitem .ink {
+    opacity: 0.5;
+    display: block !important;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem:nth-last-of-type(2) {
+    height: auto;
+    margin: 0 0 20px 0;
+}
+.overlayContainer .overlayPreferences .inner .column .formitem .fa {
+    margin: 0 10px 0 -5px;
+}
+/*	Image Overlay */
+.overlayContainer .overlayImage {
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.overlayContainer .overlayImage .overlayImageLeft,
+.overlayContainer .overlayImage .overlayImageCenter,
+.overlayContainer .overlayImage .overlayImageRight {
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+}
+.overlayContainer .overlayImage .overlayImageLeft {
+    width: 175px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.overlayContainer .overlayImage .overlayImageCenter {
+    width: calc(100% - 350px);
+    height: 100vh;
+    margin: 0 175px;
+    text-align: center;
+    position: relative;
+}
+.overlayContainer .overlayImage .overlayImageRight {
+    width: 175px;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.overlayContainer .overlayImage .overlayImageCenter .overlayImagePhoto {
+    /*width: auto;*/
+    max-height: 100vh;
+    margin: 0 auto;
+    opacity: 0;
+}
+.overlayContainer .overlayImage .overlayImageDetails {
+    width: 100%;
+    max-height: 0;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1.1em;
+    line-height: 1.25em;
+    text-align: left;
+    background: none;
+    transition: max-height 0.25s ease-in-out;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 27500;
+    pointer-events: none;
+}
+.overlayContainer .overlayImage .overlayImageDetails.active {
+    max-height: 100px;
+}
+.overlayContainer .overlayImage .overlayImageDetails p {
+    margin: 0 10px 10px 10px;
+    color: #EEEEEE;
+    font-size: 1.0em;
+}
+.overlayContainer .overlayImage .overlayImageDetails p.title {
+    margin: 10px 10px 0 10px;
+    color: #EEEEEE;
+    font-size: 1.3em;
+    line-height: 1.25em;
+}
+.overlayContainer .overlayImage .overlayImageDetails p.topics {
+    margin: 5px 0 0 0;
+}
+.overlayContainer .overlayImageFooter {
+    width: 92.5%;
+    height: auto;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    font-size: 1.05em;
+    background-color: transparent;
+    overflow: hidden;
+}
+.overlayContainer .overlayImageFooter .left {
+    width: 30%;
+    padding: 0 2.5% 50px 0;
+    text-align: left;
+    float: left;
+}
+.overlayContainer .overlayImageFooter .commentForm .formitem {
+    width: 85%;
+    min-height: 46px;
+    margin: 0 0 16px 0;
+}
+.overlayContainer .overlayImageFooter .commentForm label {
+    color: #999999 !important;
+}
+.overlayContainer .overlayImageFooter .commentForm label.active {
+    color: #EEEEEE !important;
+}
+.overlayContainer .overlayImageFooter .commentForm .textbox,
+.overlayContainer .overlayImageFooter .commentForm .textarea,
+.overlayContainer .overlayImageFooter .commentForm .button {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    color: #999999 !important;
+    line-height: 30px;
+    background-color: transparent !important;
+    border: none;
+    border-bottom: solid 1px #999999;
+    transition: all 0.5s ease-out;
+}
+.overlayContainer .overlayImageFooter .commentForm .textbox {
+    padding-bottom: 3px;
+}
+.overlayContainer .overlayImageFooter .commentForm .textarea {
+    min-height: 30px;
+    line-height: 22px;
+}
+.overlayContainer .overlayImageFooter .commentForm .textbox ~ .bar:before,
+.overlayContainer .overlayImageFooter .commentForm .textbox ~ .bar:after {
+    background: #EEEEEE !important;
+}
+.overlayContainer .overlayImageFooter .commentForm .textbox.error ~ .bar:before,
+.overlayContainer .overlayImageFooter .commentForm .textbox.error ~ .bar:after {
+    background: #CC0000 !important;
+}
+.overlayContainer .overlayImageFooter .commentForm .textarea ~ .bar {
+    bottom: 16px;
+}
+.overlayContainer .overlayImageFooter .commentForm .textarea:not(.error) ~ .bar:before,
+.overlayContainer .overlayImageFooter .commentForm .textarea:not(.error) ~ .bar:after {
+    background: #EEEEEE !important;
+}
+.overlayContainer .overlayImageFooter .commentForm .button {
+    width: auto;
+    height: auto;
+    margin: 0 -24px 0 0;
+    padding: 4px 24px;
+    font-weight: bold;
+    border: none;
+    float: right;
+}
+.overlayContainer .overlayImageFooter .commentForm .textbox:hover,
+.overlayContainer .overlayImageFooter .commentForm .textbox:focus,
+.overlayContainer .overlayImageFooter .commentForm .textarea:hover,
+.overlayContainer .overlayImageFooter .commentForm .textarea:focus,
+.overlayContainer .overlayImageFooter .commentForm .button:hover,
+.overlayContainer .overlayImageFooter .commentForm .button:focus {
+    color: #EEEEEE !important;
+    border-color: #EEEEEE;
+    transition: all 0.5s ease-in;
+}
+.overlayContainer .overlayImageFooter .commentForm .error {
+    border-color: #CC0000 !important;
+}
+.overlayContainer .overlayImageFooter .commentFormResult {
+    width: 100%;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    color: #63CB00;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    text-align: left;
+    clear: both;
+}
+.overlayContainer .overlayImageFooter .commentFormResult.error {
+    color: #CC0000;
+    color: #FFFFFF;
+}
+.overlayContainer .overlayImageFooter .commentFormResult span {
+    opacity: 0;
+}
+.overlayContainer .overlayImageFooter .imageComments {
+    width: calc(100% - 20px);
+    height: 275px;
+    margin: 0;
+    padding: 0 20px 0 0;
+}
+.overlayContainer .overlayImageFooter .imageComments .imageComment {
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    padding: 7px 0 20px 0;
+    border-bottom: solid 1px #666666;
+    clear: both;
+    overflow: hidden;
+}
+.overlayContainer .overlayImageFooter .imageComment p {
+    color: #999999;
+    transition: color 0.5s ease-in-out;
+}
+.overlayContainer .overlayImageFooter .imageComment p.poster {
+    width: 99%;
+    margin: 0;
+    padding: 0 0.5% 0 0.5%;
+    text-transform: none;
+    overflow: hidden;
+    float: left;
+}
+.overlayContainer .overlayImageFooter .imageComment p.poster .name {
+    font-family: 'Roboto Bold';
+    font-size: 1.15em;
+    display: inline-block;
+    float: left;
+}
+.overlayContainer .overlayImageFooter .imageComment p a {
+    color: #CCCCCC;
+    text-transform: none;
+    background-color: transparent;
+}
+.overlayContainer .overlayImageFooter .imageComment p a:before {
+    content: '\f015';
+    margin: 0;
+    color: #CCCCCC;
+    font-family: 'FontAwesome';
+    transition: color 0.5s ease-in-out;
+    position: relative;
+    top: -1px;
+    left: 5px;
+}
+.overlayContainer .overlayImageFooter .imageComment p a:hover:before {
+    color: #999999;
+}
+.overlayContainer .overlayImageFooter .imageComment p.poster .date {
+    margin: 0;
+    font-size: 0.85em;
+    display: inline-block;
+    float: right;
+}
+.overlayContainer .overlayImageFooter .imageComment p.post {
+    width: 99%;
+    margin: 15px 0 0 0;
+    padding: 0 0.5%;
+    text-transform: none;
+    overflow: hidden;
+    float: left;
+}
+.overlayContainer .overlayImageFooter .imageComment:hover p {
+    color: #EEEEEE;
+}
+.overlayContainer .overlayImageFooter .imageComment:hover p a {
+    color: #EEEEEE;
+}
+.overlayContainer .overlayImageFooter .imageComment:hover p a:before {
+    color: #EEEEEE;
+}
+.overlayContainer .overlayImageFooter .imageComment:hover p a:hover:before {
+    color: #999999;
+}
+.overlayContainer .overlayImageFooter .page-comment-list {
+    width: 30%;
+    margin: 0 auto;
+    padding: 0 2.5%;
+    text-align: left;
+    float: left;
+}
+.overlayContainer .overlayImageFooter .page-comment-form p,
+.overlayContainer .overlayImageFooter .page-meta p {
+    margin: 0;
+}
+.overlayContainer .overlayImageFooter .page-comment-list p {
+    color: #999999;
+    line-height: 1.35em;
+    text-align: left;
+    /* text-transform: lowercase; */
+}
+.overlayContainer .overlayImageFooter .page-meta {
+    width: 30%;
+    padding: 0 0 0 2.5%;
+    text-align: left;
+    float: left;
+}
+.overlayContainer .overlayImageFooter .page-meta p.details {
+    padding: 4px 0 0 0;
+    line-height: 1.75em;
+    /* text-transform: lowercase; */
+}
+.overlayImageFooter .page-meta p.details .label {
+    width: 35%;
+    padding: 0 5% 0 0;
+    color: #999999;
+    display: inline-block;
+    float: left;
+}
+.overlayImageFooter .page-meta p.details .value {
+    width: 60%;
+    padding: 0;
+    color: #999999;
+    display: inline-block;
+    float: left;
+}
+.overlayImageFooter .page-meta p.details .value a:not(.overlaytag):link,
+.overlayImageFooter .page-meta p.details .value a:not(.overlaytag):active,
+.overlayImageFooter .page-meta p.details .value a:not(.overlaytag):visited,
+.overlayImageFooter .page-meta p.details .value a:not(.overlaytag):focus {
+    color: #999999;
+}
+.overlayImageFooter .page-meta p.details .value a:not(.overlaytag):hover {
+    color: #CCCCCC;
+}
+.overlayContainer .overlayImageFooter h2 {
+    margin: 0 0 35px 0;
+    color: #CCCCCC;
+    font-size: 1.3em;
+}
+
+/*	Content: Image Page Styles */
+.imagePage {
+    width: 100%;
+    padding: 0 0 10px 0;
+}
+.imageContainer {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.imagePlaceholder {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+.imagePlaceholder .fullImageLeft {
+    width: 5%;
+    margin: 0;
+    float: left;
+}
+.imagePlaceholder .fullImageLeft .ui-button {
+    margin: 10px 0 0 0;
+    display: block;
+    float: left;
+    clear: both;
+}
+.imagePlaceholder .fullImageLeft .ui-button:first-child {
+    margin: 0;
+}
+.imagePlaceholder .fullImageRight {
+    width: 5%;
+    margin: 0;
+    float: right;
+}
+.imagePlaceholder .fullImageRight .ui-button {
+    margin: 10px 0 0 0;
+    display: block;
+    float: right;
+    clear: both;
+}
+.imagePlaceholder .fullImageRight .ui-button:first-child {
+    margin: 0;
+}
+.imagePlaceholder .fullImageCenter {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.imagePlaceholder .fullImageWrapper {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.imagePlaceholder .fullImage {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
+.imagePlaceholder .fullImageDetails {
+    max-height: 0;
+    margin: 0 auto;
+    padding: 0 5px;
+    margin-bottom: 6px;
+    text-align: left;
+    line-height: 1.25em;
+    background-color: transparent;
+    transition: max-height 0.25s ease-in-out;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 17500;
+}
+.imagePlaceholder .fullImageDetails.active {
+    max-height: 100px;
+}
+.imagePlaceholder .fullImageDetails p {
+    margin: 0;
+    color: #FFFFFF;
+}
+.imagePlaceholder .fullImageDetails p .title {
+    margin: 0;
+    font-size: 1.15em;
+    display: block;
+}
+.imagePlaceholder .fullImageDetails p .description {
+    font-size: 0.85em;
+    display: block;
+}
+.fullImageFooter {
+    width: 90%;
+    height: auto;
+    margin: 50px auto 0 auto;
+    padding: 0;
+    color: #AAAAAA;
+    text-align: center;
+    clear: both;
+    overflow: hidden;
+}
+.fullImageFooter .page-comment-form {
+    width: 35%;
+    padding: 0 5% 0 0;
+    text-align: left;
+    float: left;
+}
+.fullImageFooter .page-comment-form .formitem {
+    width: 65%;
+    margin: 0 0 15px 0;
+}
+.fullImageFooter .page-comment-form .textbox,
+.fullImageFooter .page-comment-form .textarea,
+.fullImageFooter .page-comment-form .button {
+    width: 95%;
+    margin: 0;
+    padding: 4px 2.5%;
+}
+.fullImageFooter .page-comment-form .button {
+    width: auto;
+    min-width: 60px;
+    margin: 0 -2px 0 17px;
+    padding: 6px;
+    float: right;
+}
+.fullImageFooter .page-comment-form .textbox:hover,
+.fullImageFooter .page-comment-form .textbox:focus,
+.fullImageFooter .page-comment-form .textarea:hover,
+.fullImageFooter .page-comment-form .textarea:focus,
+.fullImageFooter .page-comment-form .button:hover,
+.fullImageFooter .page-comment-form .button:focus {
+}
+.fullImageFooter .page-comment-form .error {
+    border-color: #CC0000 !important;
+}
+.fullImageFooter .page-comment-form .commentFormFeedback {
+    width: 65%;
+    padding: 10px 0 0 0;
+    font-size: 0.85em;
+    text-align: right;
+    clear: both;
+}
+.fullImageFooter .page-comment-form .commentFormFeedback.msg_error {
+    color: #CC0000;
+}
+.fullImageFooter .page-comment-form .commentFormFeedback.msg_success {
+    color: #63CB00;
+}
+.fullImageFooter .page-comment-list {
+    width: 100%;
+    height: auto;
+    margin: 5px 0 10px 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.fullImageFooter .page-comment-list .imageComment {
+    width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.fullImageFooter .page-comment-list .imageComment p.poster {
+    width: 35%;
+    margin: 0 5% 10px 0;
+    text-transform: none;
+    overflow: hidden;
+    float: left;
+}
+.fullImageFooter .page-comment-list .imageComment p.poster a {
+    margin: 0;
+    display: inline-block;
+}
+.fullImageFooter .page-comment-list .imageComment p.post {
+    width: 60%;
+    margin: 0 0 10px 0;
+    text-transform: none;
+    overflow: hidden;
+    float: left;
+}
+.fullImageFooter .page-comment-list {
+    width: 35%;
+    margin: 0 auto;
+    padding: 0 5% 0 0;
+    text-align: left;
+    float: left;
+}
+.fullImageFooter .page-comment-form p,
+.fullImageFooter .page-meta p {
+    margin: 0;
+}
+.fullImageFooter .page-comment-list p {
+    margin: 0;
+    line-height: 1.35em;
+    text-align: left;
+    /* text-transform: lowercase; */
+}
+.fullImageFooter .page-comment-list p a {
+    text-transform: none;
+}
+.fullImageFooter .page-meta {
+    width: 20%;
+    padding: 0;
+    text-align: left;
+    float: left;
+}
+.fullImageFooter .page-meta p.details {
+    line-height: 1.5em;
+    /* text-transform: lowercase; */
+}
+.fullImageFooter h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+}
+
+/*	jQuery Rating Styles */
+.rating {
+    width: 80px;
+    height: 15px;
+    display: inline-block;
+    clear: both;
+    float: right;
+}
+div.star-rating a {
+    color: transparent;
+}
+.rating_thankyou {
+    height: 15px;
+    margin: -2px 0 0 0;
+    padding: 0 5px 0 0;
+    font-size: 1.0em;
+    color: #AAAAAA;
+    display: inline-block;
+    float: right;
+}
+.rating_score {
+    padding: 3px 0 0 2px;
+    font-size: 1.0em;
+    color: #666666;
+    text-align: right;
+    clear: both;
+}
+div.rating-cancel {
+    display: none !important;
+}
+/*	Content: Image Page Paging Styles */
+.imagePagePaging {
+    width: 100%;
+    height: auto;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.imagePagingPrevLink,
+.imagePagingMiscLink,
+.pagingNextLink {
+    width: 33%;
+    padding: 0;
+    display: block;
+    float: left;
+}
+.imagePagingMiscLink {
+    width: 34%;
+    text-align: center;
+}
+.imagePagingNextLink {
+    text-align: right;
+}
+.imagePagePaging a:link,
+.imagePagePaging a:active,
+.imagePagePaging a:visited,
+.imagePagePaging a:focus {
+    font-size: 1.0em;
+    color: #666666;
+    text-decoration: none;
+    /* text-transform: lowercase; */
+    line-height: 1.5em;
+    display: inline-block;
+}
+.imagePagePaging a:hover {
+    text-decoration: none;
+}
+.imagePagePaging a.prev {
+    margin: 0;
+    padding: 0 0 0 18px;
+}
+.imagePagePaging a.next {
+    margin: 0;
+    padding: 0 18px 0 0;
+}
+.imagePagePaging a.up {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.imagePagePaging a.down {
+    margin: 0;
+    padding: 0 6px 0 15px;
+}
+
+/*	Content: PageList Styles */
+.page-list {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    padding: 0;
+    clear: both;
+    float: none;
+    overflow: hidden;
+    overflow: visible;
+}
+.page-list.frontpage {
+    margin: 0 auto 65px auto !important;
+    padding: 0;
+}
+.numpages {
+    width: 15%;
+    max-width: 140px;
+    margin: 25px 0 0 0;
+    padding: 0;
+    color: #333333;
+    font-size: 1.35em;
+    text-align: right;
+    display: block;
+    float: right;
+}
+
+/*	Content: Page Styles */
+.pageText {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.pageText h2,
+.pageText h3,
+.pageText h4 {
+    margin: 0 0 15px 0;
+    padding: 0;
+    clear: both;
+}
+.pageText p,
+.pageText ul,
+.pageText ol {
+    margin: 0 0 20px 0;
+    padding: 0;
+    text-align: justify;
+    clear: both;
+}
+.pageText p {
+    text-align: justify;
+}
+.pageText p.nomargin,
+.pageText ul.nomargin,
+.pageText ol.nomargin {
+    margin: 0 0 5px 0;
+}
+.pageText ul li {
+    width: auto;
+    height: auto;
+    margin: 0 0 5px 0;
+    padding: 0 0 0 20px;
+    list-style: none;
+}
+.pageText ul li i {
+    margin: 0 10px 0 0;
+}
+.pageText .hairline {
+    margin: 25px 0 40px 0;
+    clear: both;
+}
+
+.pageSection {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.pageSection p {
+    margin: 0 0 30px 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    clear: none;
+}
+.pageSection p.intro {
+    margin: 0 0 35px 0;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+.pageSection iframe {
+    margin: 10px auto -5px auto;
+    display: block;
+}
+.contentImage,
+.pageSection .contentImage {
+    width: 35%;
+    max-width: 400px;
+    display: block;
+}
+.contentImage.contentImageCenter.contentImagePortrait,
+.pageSection .contentImage.contentImageCenter.contentImagePortrait {
+    margin: 10px 0 20px 0;
+}
+.contentImage.contentImageCenter.contentImagePortrait .imageWrapper,
+.pageSection .contentImage.contentImageCenter.contentImagePortrait .imageWrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+.contentImage img,
+.pageSection .contentImage img {
+    width: 100%;
+    margin: 0;
+}
+.contentImage img.tr_tooltip,
+.pageSection .contentImage img.tr_tooltip {
+    cursor: pointer;
+}
+.contentImage.contentImageLeft,
+.pageSection .contentImage.contentImageLeft {
+    margin: 4px 25px 10px 0;
+    float: left;
+}
+.contentImage.contentImageLeft .imageWrapper,
+.pageSection .contentImage.contentImageLeft .imageWrapper {
+    width: 100%;
+    margin: 0;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+.contentImage.contentImageLeft .imageWrapper img,
+.pageSection .contentImage.contentImageLeft .imageWrapper img {
+    width: 100%;
+}
+.contentImage.contentImageRight,
+.pageSection .contentImage.contentImageRight {
+    margin: 4px 0 10px 25px;
+    float: right;
+}
+.contentImage.contentImageRight .imageWrapper,
+.pageSection .contentImage.contentImageRight .imageWrapper {
+    width: 100%;
+    margin: 0;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+.contentImage.contentImageRight .imageWrapper img,
+.pageSection .contentImage.contentImageRight .imageWrapper img {
+    width: 100%;
+}
+.contentImage.contentImageCenter,
+.pageSection .contentImage.contentImageCenter {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0 30px 0;
+    display: block;
+    float: none;
+    clear: both;
+}
+.contentImage.contentImageCenter .imageWrapper,
+.pageSection .contentImage.contentImageCenter .imageWrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+.contentImage .imageDescription,
+.pageSection .contentImage .imageDescription {
+    width: 100%;
+    max-width: 380px;
+    max-height: 0;
+    margin: 0 auto 10px auto;
+    padding: 0 10px;
+    color: #FFFFFF;
+    font-size: 0.85em;
+    text-align: left;
+    line-height: 1.25em;
+    background-color: transparent;
+    transition: max-height 0.25s ease-in-out;
+    display: block;
+    overflow: hidden;
+    cursor: default;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    z-index: 1500;
+}
+.contentImage .imageDescription.active,
+.pageSection .contentImage .imageDescription.active {
+    max-height: 200px;
+}
+.contentImage.contentImageCenter .imageDescription,
+.pageSection .contentImage.contentImageCenter .imageDescription {
+    width: inherit;
+    max-width: initial;
+}
+.contentImage.contentImageCenter.contentImagePortrait .imageDescription,
+.pageSection .contentImage.contentImageCenter.contentImagePortrait .imageDescription {
+    bottom: 0;
+}
+.contentImage.contentImageRight .imageDescription,
+.pageSection .contentImage.contentImageRight .imageDescription {
+    float: right;
+}
+.contentImage .title,
+.pageSection .contentImage .title {
+    padding-bottom: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+/*	Content: Page Footer (Comments/Info) */
+
+/*	Content: Search Results Styles */
+.searchContainer {
+    height: auto;
+    padding: 0 0 0 0;
+    line-height: 1.5em;
+    clear: both;
+    overflow: hidden;
+}
+.searchItem {
+    width: auto;
+    margin: 0 0 20px 0;
+    padding: 10px 0 15px 0;
+    background-color: transparent;
+    clear: both;
+    overflow: hidden;
+}
+.searchItem:hover {
+}
+.searchItem .searchDetails {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.searchItem .searchDetails .title {
+    margin: 0 0 10px 0;
+}
+.searchItem .searchDetails .description {
+    margin: 0 0 30px 0;
+}
+.searchItem .searchDetails .meta {
+    margin: 0 0 5px 0;
+    font-size: 0.875em;
+}
+.searchItem .searchDetails .tags {
+    margin: 0 0 10px 0;
+    font-size: 0.875em;
+}
+.searchItem .searchThumbnail {
+    width: 25%;
+    display: block;
+    float: right;
+}
+.searchItem .searchThumbnail a {
+}
+.searchItem .searchThumbnail a img {
+    width: 50%;
+    float: right;
+    display: block;
+}
+.searchHiLight {
+    padding: 2px 4px;
+    font-size: 1.0em;
+    font-style: normal;
+    background-color: #F6F6F6;
+}
+a.searchLink:link,
+a.searchLink:active,
+a.searchLink:visited,
+a.searchLink:focus  {
+    margin: 0 0 0 10px;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    text-decoration: none;
+    font-weight: normal;
+}
+a.searchLink:hover  {
+    text-decoration: none;
+}
+
+/*	Content: Login Form Styles */
+.loginForm {
+    width: 50%;
+    height: auto;
+    margin: 0 20% 0 30%;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.loginForm h1 {
+    margin: 100px 0 35px 0
+}
+.loginForm .textbox {
+}
+.loginForm .button {
+}
+.loginForm .feedback {
+    color: #CC0000;
+    font-size: 1.0em;
+    float: left;
+}
+
+/*	Content: Statistics Styles */
+.pagestatisticsTable {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+.pagestatisticsTable thead th {
+    padding-bottom: 10px;
+    font-size: 1.125em;
+    font-weight: normal;
+    text-align: left;
+    border-bottom: solid 1px #AAAAAA;
+    cursor: pointer;
+}
+.pagestatisticsTable thead th:first-child {
+    width: 50%;
+}
+.pagestatisticsTable thead th:first-child {
+    width: 65%;
+}
+.pagestatisticsTable thead th:last-child {
+    width: 10%;
+    text-align: center;
+}
+.pagestatisticsTable tr td {
+    padding: 8px 0 5px 0;
+    border-bottom: solid 1px #AAAAAA;
+}
+
+/*	Content: Feedback Styles*/
+.loaderDiv {
+    width: 75%;
+    margin: 125px auto 0 auto;
+    color: #666666;
+    font-weight: normal;
+    text-align: center;
+}
+.errorDiv {
+    width: 92.5%;
+    margin: 75px 3.75% 0 3.75%;
+    color: #666666;
+    font-weight: normal;
+    text-align: center;
+}
+.errorDiv .loaderContainer {
+    width: 250px;
+    height: 20px;
+    margin: 0 auto 25px auto;
+    position: relative;
+}
+
+/*	Footer Styles (Copyright/Quicklinks) */
+/*#footer {*/
+    /*width: 100%;*/
+    /*height: 656px;*/
+    /*margin: 0 auto;*/
+    /*padding: 0 0 75px 0;*/
+    /*font-size: 1.0em;*/
+    /*font-weight: normal;*/
+    /*border: none;*/
+    /*background-color: transparent;*/
+    /*overflow: hidden;*/
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+/*}*/
+
+/* Navigation Link Styles */
+/*a.leftNav:link,*/
+/*a.leftNav:active,*/
+/*a.leftNav:visited,*/
+/*a.leftNav:focus,*/
+/*span.leftNav,*/
+/*a.nav:link,*/
+/*a.nav:active,*/
+/*a.nav:visited,*/
+/*a.nav:focus {*/
+    /*font-size: 0.95em;*/
+    /*line-height: 1.5em;*/
+    /*text-decoration: underline;*/
+    /*font-variant: normal;*/
+    /*font-weight: normal;*/
+    /*/* text-transform: lowercase; */*/
+    /*color: #333333;*/
+/*}*/
+
+/*a.leftNav:hover,*/
+/*span.leftNav:hover,*/
+/*a.nav:hover {*/
+    /*text-decoration: none;*/
+/*}*/
+span.fontlabel {
+    font-size: 0.95em;
+    line-height: 1.5em;
+    font-variant: normal;
+    font-weight: normal;
+    color: #AAAAAA;
+}
+
+.quicklinks li {
+    background-color: #3D3D3D;
+}
+.quicklinks li:hover {
+    background-color: #121212;
+}
+
+/* Toopltip Styles */
+.tr_tooltip {
+    /* cursor: none !important; */
+}
+.tooltip {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    display: none;
+    position: absolute;
+    z-index: 250;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+}
+.tooltip span {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 2px 4px;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    display: inline-block;
+}
+
+/* ScrollBar Styles */
+/* Body */
+.htmlScroll div {
+    background-color: #DADADA !important;
+    opacity: 0.5 !important;
+    border: none !important;
+}
+/* Page Comments */
+.commentsScroll {
+    position: fixed !important;
+    z-index: 0 !important;
+}
+.commentsScroll div,
+.overlayCommentsScroll div {
+    background-color: #FFFFFF !important;
+    opacity: 0.25 !important;
+    border: none !important;
+    left: 10px;
+}
+/* Overlay */
+.overlayScroll div {
+    background-color: #999999 !important;
+    opacity: 0.5 !important;
+    border: none !important;
+}
+/* slideMenu */
+.sidebar .nicescroll-rails {
+    position: fixed !important;
+}
+.sidebar .nicescroll-rails div {
+    background-color: #DADADA !important;
+    opacity: 0.5 !important;
+    border: none !important;
+}
+/* Vertical (always disable) */
+#nicescroll-hr {
+    display: none !important;
+}
+
+/* Tag Styles */
+.tag,
+.tag-fa,
+.tag.tag-fa,
+span.tag.tag-fa,
+.tag:link,
+.tag:active,
+.tag:visited,
+.tag:focus,
+span.tagit-label,
+span.text-icon {
+    height: 24px;
+    margin: 0;
+    padding: 0 8px;
+    color: #FFFFFF;
+    line-height: 24px;
+    background-color: #000000;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+}
+.tag:hover,
+span.tagit-label:hover,
+span.text-icon:hover {
+    color: #000000;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+.tagit-close .text-icon,
+span.tagit-label {
+    height: 24px;
+    padding: 0 8px;
+    line-height: 23px;
+}
+.fa span {
+    font-size: 0;
+}
+span.text-icon {
+    margin: 0;
+    padding: 0 4px;
+}
+.tag.small {
+    margin: 0;
+    padding: 3px;
+    font-size: 0.8em;
+}
+.tag.tag-fa,
+span.tag.tag-fa {
+    min-width: 20px;
+    height: 32px;
+    margin: -3px 5px 0 0;
+    padding: 0 0.775%;
+    padding: 0 6px;
+    color: #FFFFFF;
+    font-size: 1.0em;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #000000;
+    float: left;
+    cursor: pointer;
+}
+.tag.tag-fa:focus,
+.tag.tag-fa:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.tag.tag-fa.right {
+    float: right;
+}
+.tag.tag-fa.tag-fa-text,
+span.tag.tag-fa.tag-fa-text {
+    width: auto !important;
+    height: 18px !important;
+    margin: 6px 4px 0 0 !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    font-size: 1.0em !important;
+    line-height: 0.7em;
+    /* text-transform: lowercase; */
+}
+.tag.tag-fa.tag-fa-text-image,
+span.tag.tag-fa.tag-fa-text-image {
+    height: 17px !important;
+    margin: 5px 4px 0 0 !important;
+}
+.tag.tag-fa.tag-fa-warning,
+span.tag.tag-fa.tag-fa-warning {
+    color: #FFFFFF !important;
+    background-color: #FF0000 !important;
+}
+.tag.tag-fa.margined {
+    margin-right: 15px;
+}
+.tag.tag-fa.refreshRandomImages {
+    height: 31px;
+    margin: 0;
+    padding: 1px 6px 0 6px;
+    line-height: inherit !important;
+}
+.tag.tag-fa.button {
+    width: 100%;
+    height: 26px;
+    margin: -10px auto 0 auto;
+    padding: 14px 0 0 0;
+    color: #666666;
+    font-size: 1.0em;
+    line-height: 16px;
+    /* text-transform: lowercase; */
+    background-color: transparent;
+}
+.tag.tag-fa.button:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.tag.tag-fa.tag-fa-overlay,
+span.tag.tag-fa.tag-fa-overlay {
+    min-width: 23px;
+    height: 25px;
+    margin: 5px 0 0 5px;
+    padding: 5px 6px;
+    color: #999999 !important;
+    font-size: 1.35em;
+    line-height: 1.6em;
+    float: left;
+}
+.tag.tag-fa.tag-fa-overlay:hover,
+span.tag.tag-fa.tag-fa-overlay:hover {
+    color: #EEEEEE !important;
+    background-color: transparent !important;
+}
+.tag.tag-fa.tag-fa-overlay.right,
+span.tag.tag-fa.tag-fa-overlay.right {
+    margin: 5px 5px 0 0;
+    float: right;
+}
+.tag.tag-fa.tag-fa-warning:hover,
+span.tag.tag-fa.tag-fa-warning:hover {
+    color: #EEEEEE !important;
+    background-color: #BB0000 !important;
+}
+tag.tag-fa.tag-fa-startbutton,
+span.tag.tag-fa.tag-fa-startbutton {
+    width: 100%;
+    height: 50px;
+    margin: -14px 0 0 0;
+    padding: 0;
+    line-height: 50px;
+    /* text-transform: lowercase; */
+}
+.overlaytag,
+.overlaytag:link,
+.overlaytag:active,
+.overlaytag:visited,
+.overlaytag:focus {
+    margin: 0;
+    padding: 0 8px;
+    color: #000000 !important;
+    background-color: #CCCCCC;
+    display: inline-block;
+}
+.overlaytag:hover {
+    color: #AAAAAA !important;
+    background-color: transparent;
+    transition: all 0.75s ease-out;
+}
+.overlaytag.small {
+    margin: 0;
+    padding: 3px;
+    font-size: 0.8em;
+}
+/* Reversed Tag Styles */
+.tag.tag-fa.tag-fa-reversed,
+.tag-fa.tag-fa-reversed {
+    color: #666666;
+    background-color: transparent;
+}
+.tag.tag-fa.tag-fa-reversed:hover,
+.tag-fa.tag-fa-reversed:hover {
+    color: #000000;
+    background-color: transparent !important;
+}
+.tag.tag-fa.tag-fa-overlay.tag-fa-reversed:hover,
+.tag-fa.tag-fa-overlay.tag-fa-reversed:hover {
+    color: #CCCCCC;
+    background-color: transparent;
+}
+
+/* ContentPage Default Styles */
+.pagecontent-container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.pagecontent-container.image {
+    padding: 75px 0 0 0;
+}
+.pagecontent-container .cWide {
+    width: 92.5%;
+    margin: 0 auto;
+    /*padding-left: 3.75%;
+		padding-right: 3.75%;*/
+    overflow: hidden;
+}
+.pagecontent-container .cNarrow {
+    width: 75%;
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.pagecontent-container .cCms {
+    width: 65%;
+    margin: 0 auto;
+    margin: 0;
+    padding: 0 31.25% 0 3.75%;
+    overflow: hidden;
+}
+
+/*	CSS Loading */
+.loading {
+    margin: 0 auto;
+    padding: 0 0 0 100px;
+    position: absolute;
+}
+.loading.overlayImageLoading {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease-out;
+    -moz-transition: opacity 0.25s ease-out;
+    -o-transition: opacity 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    right: 50%;
+    z-index: -1;
+}
+.loading .bullet {
+    padding: 6px;
+    background: #333333;
+    border-radius: 50%;
+    -webkit-animation: animIn 2s ease-in-out 0s infinite;
+    -moz-animation: animIn 2s ease-in-out 0s infinite;
+    -ms-animation: animIn 2s ease-in-out 0s infinite;
+    -o-animation: animIn 2s ease-in-out 0s infinite;
+    animation: animIn 2s ease-in-out 0s infinite;
+    position: absolute;
+    opacity: 0;
+}
+.loading.overlayImageLoading .bullet {
+    background: #999999;
+}
+.loading .bullet:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+.loading .bullet:nth-child(2) {
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
+}
+.loading .bullet:nth-child(3) {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.loading .bullet:nth-child(4) {
+    -webkit-animation-delay: 0.45s;
+    animation-delay: 0.45s;
+}
+
+/*	Feature Tour */
+.guideMask {
+    width: 100%;
+    background-color: #000000;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.guideBubble {
+    width: 250px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    -webkit-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    -moz-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    -ms-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    -o-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    position: absolute;
+}
+.guideBubble .intro {
+    margin-left: 30px;
+    padding-bottom: 30px;
+    color: #333333;
+    /*font-family: 'Default', Calibri, Arial;*/
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+.guideBubble .step {
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    line-height: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #666666;
+    border-radius: 10px;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+}
+.guideBubble .formitem.formitem_md {
+    margin-bottom: 0;
+}
+.guideBubble .formitem.formitem_md:last-of-type {
+    margin-bottom: 0;
+}
+.guideBubble .formitem.formitem_md .button.raised {
+    margin: 0 10px;
+    padding: 0 15px;
+    font-size: 1.1em;
+    /* text-transform: lowercase; */
+    box-shadow: none;
+    border-radius: 0;
+    float: left;
+}
+.guideBubble .formitem.formitem_md .button:before {
+    height: 30px;
+    margin: 0 10px 0 0;
+    font-size: 0.75em;
+    line-height: 32px;
+}
+.guideBubble .formitem.formitem_md .button.icon-right:before {
+    margin: 0 0 0 10px;
+}
+.guideBubble .formitem.formitem_md .button:last-of-type {
+    float: right;
+}
+.guideBubble .formitem.formitem_md .button.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
+.guideBubble-arrow {
+    content: '';
+    border: 5px solid #FFFFFF;
+    position: absolute;
+}
+.guideBubble-arrow.top {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: #FFFFFF;
+    border-left-color: transparent;
+    top: -10px;
+}
+.guideBubble-arrow.right {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #FFFFFF;
+    top: 10px;
+    right: -10px;
+}
+.guideBubble-arrow.bottom {
+    border-top-color: #FFFFFF;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    bottom: -10px;
+}
+.guideBubble-arrow.left {
+    border-top-color: transparent;
+    border-right-color: #FFFFFF;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    top: 10px;
+    left: -10px;
+}

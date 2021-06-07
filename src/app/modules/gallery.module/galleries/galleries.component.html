@@ -1,0 +1,16 @@
+<article id="pageContent" class="pagecontent-container">
+    <!-- HEADER -->
+    <section class="cWide">
+        <h1 class="albumHeader">All albums</h1>
+        <span class="numitems" *ngIf="visibleGalleryIds">{{ visibleGalleryIds.length }} albums</span>
+    </section>
+
+    <!-- CONTENT (IMAGELIST) -->
+    <section class="">
+        <ul>
+            <li *ngFor="let gallery of visibleGalleryIds">
+                <i class="fa fa-chevron-right" style="margin-right: 10px;"></i> <a href="/#/gallery/{{ gallery }}">Album with ID {{ gallery }}</a>
+            </li>
+        </ul>
+    </section>
+</article>

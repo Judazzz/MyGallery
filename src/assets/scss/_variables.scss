@@ -1,0 +1,236 @@
+//*** FONT FAMILIES ***//
+$font-body: 'Roboto Regular', Calibri, Arial;
+$font-body-italic: 'Roboto Regular', Calibri, Arial;
+$font-body-thin: 'Roboto Regular', Calibri, Arial;
+$font-body-bold: 'Roboto Bold', Calibri, Arial;
+$font-neon: 'LasEnter', Calibri, Arial;
+$font-awesome: 'FontAwesome';
+$font-awesome-brands: 'FontAwesome Brands';
+
+//*** THEME COLORS ***//
+$color-primary: #F8972A;
+$color-secondary: #A1A3A6;
+$color-tertiary: #FAB669;
+
+//*** LAYOUT COLORS ***//
+$background-color-body-start: #F8972A;
+$background-color-body-end: #EE3425;
+$background-color-sidebar: #FEE9D0;
+$background-color-main: #FFF7EE;
+
+$border-gray-light: #E4E4E4;
+
+$color-gray-darkest: #0C0C0C;
+$color-gray-darker: #3C3C3C;
+$color-gray-dark: #8C8C8C;
+$color-gray-light: #CCCCCC;
+$color-gray-lightest: #ECECEC;
+
+//*** FONT COLORS ***//
+$font-color-default: #3C3C3C;
+$font-color-light: #7A7A7A;
+$font-color-floating-label: lighten($color-gray-dark, 17.5%);
+$font-color-placeholder: #ACACAC;
+$font-color-disabled: $color-secondary;
+$font-color-placeholder-disabled: lighten($color-gray-dark, 17.5%);
+
+//*** FEEDBACK/LABEL COLORS ***//
+$color-error: #EE3425;
+$color-warning: #F7860E;
+$color-success: #69B418;
+$color-info: #7BBDEC;
+$color-question: #92AABB;
+
+//*** AVATAR PLACEHOLDER COLORS ***//
+$color-avatar-placeholder: #FBCB94;
+$color-avatar-placeholder-deleted: #92AABB;
+
+//*** HIGHLIGHT COLORS ***//
+$color-highlight-chat-message: #FEE9D0;
+
+//*** DEFAULT DIMENSIONS ***//
+$height-header: 50px;
+$height-footer: 0;
+$width-content-desktop: 1280px;
+$width-content-tablet: 915px;
+$width-content-mobile: 620px;
+$width-sidebar-desktop: 300px;
+$width-sidebar-desktop-small: 270px;
+$width-sidebar-tablet: 205px;
+$width-sidebar-mobile: 100%;
+
+$width-inbox-chat-users: 425px;
+$width-inbox-chat-window: calc(100% - #{$width-inbox-chat-users});
+$width-inbox-chat-users-mobile: 50%;
+$width-inbox-chat-window-mobile: calc(100% - #{$width-inbox-chat-users-mobile});
+
+
+//*** MIXINS ***//
+@mixin transform($style) {
+    transition: $style 125ms linear;
+    -webkit-transform: $style;
+    -moz-transform: $style;
+    -o-transform: $style;
+    -ms-transform: $style;
+    transform: $style;
+}
+
+@mixin transition-125($style) {
+    transition: $style 125ms ease-in-out;
+}
+
+@mixin transition-250($style) {
+    transition: $style 250ms ease-in-out;
+}
+
+@mixin transition-375($style) {
+    transition: $style 375ms ease-in-out;
+}
+
+@mixin transition-500($style) {
+    transition: $style 500ms ease-in-out;
+}
+
+@mixin transition-750($style) {
+    transition: $style 750ms ease-in-out;
+}
+
+@mixin transition-custom($style, $duration, $easing) {
+    transition: $style $duration $easing;
+}
+
+@mixin transition-all-except($style, $duration, $easing) {
+    transition: all $duration $easing, $style 0ms;
+}
+
+@mixin animate($animation, $easing, $duration) {
+    -webkit-animation: $animation $easing $duration;
+    animation: $animation $easing $duration;
+}
+
+//*** NG-SELECT ***//
+@mixin rtl {
+    @at-root [dir="rtl"] #{&} {
+        @content
+    }
+}
+
+//*** ANIMATIONS ***//
+//  Spin Animation:
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+//  Fade-In Animation:
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+//  Highlight Animations for Messages
+//  Message background-color:
+@-webkit-keyframes highlightMessageBackground {
+    0% {
+        background-color: #FFFFFF;
+    }
+    50% {
+        background-color: $color-highlight-chat-message;
+    }
+    100% {
+        background-color: #FFFFFF;
+    }
+}
+@keyframes highlightMessageBackground {
+    0% {
+        background-color: #FFFFFF;
+    }
+    50% {
+        background-color: $color-highlight-chat-message;
+    }
+    100% {
+        background-color: #FFFFFF;
+    }
+}
+//  Incoming message border-color:
+@-webkit-keyframes highlightIncomingMessageBorder {
+    0% {
+        border-top-color: #FFFFFF;
+        border-right-color: #FFFFFF;
+    }
+    50% {
+        border-top-color: $color-highlight-chat-message;
+        border-right-color: $color-highlight-chat-message;
+    }
+    100% {
+        border-top-color: #FFFFFF;
+        border-right-color: #FFFFFF;
+    }
+}
+@keyframes highlightIncomingMessageBorder {
+    0% {
+        border-top-color: #FFFFFF;
+        border-right-color: #FFFFFF;
+    }
+    50% {
+        border-top-color: $color-highlight-chat-message;
+        border-right-color: $color-highlight-chat-message;
+    }
+    100% {
+        border-top-color: #FFFFFF;
+        border-right-color: #FFFFFF;
+    }
+}
+//  Outgoing message border-color:
+@-webkit-keyframes highlightOutgoingMessageBorder {
+    0% {
+        border-top-color: #FFFFFF;
+        border-left-color: #FFFFFF;
+    }
+    50% {
+        border-top-color: $color-highlight-chat-message;
+        border-left-color: $color-highlight-chat-message;
+    }
+    100% {
+        border-top-color: #FFFFFF;
+        border-left-color: #FFFFFF;
+    }
+}
+@keyframes highlightOutgoingMessageBorder {
+    0% {
+        border-top-color: #FFFFFF;
+        border-left-color: #FFFFFF;
+    }
+    50% {
+        border-top-color: $color-highlight-chat-message;
+        border-left-color: $color-highlight-chat-message;
+    }
+    100% {
+        border-top-color: #FFFFFF;
+        border-left-color: #FFFFFF;
+    }
+}
